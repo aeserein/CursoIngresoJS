@@ -2,23 +2,28 @@
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
-function sumar()
-{	
-	
+function getNumeros() {
+    var numero1 = parseInt(document.getElementById("numeroUno").value);
+    var numero2 = parseInt(document.getElementById("numeroDos").value);
+    return { numero1, numero2 };
 }
 
-function restar()
-{
-	
+function sumar() {
+    var { numero1, numero2 } = getNumeros();
+	alert(numero1 + " + " + numero2 + " = " + (numero1+numero2));
 }
 
-function multiplicar()
-{ 
-	
+function restar() {
+    var { numero1, numero2 } = getNumeros();
+	alert(numero1 + " - " + numero2 + " = " + (numero1-numero2));
 }
 
-function dividir()
-{
-	
+function multiplicar() {
+    var { numero1, numero2 } = getNumeros(); 
+    alert(numero1 + " × " + numero2 + " = " + (numero1*numero2));
 }
 
+function dividir() {
+    var { numero1, numero2 } = getNumeros();
+    alert(numero1 + " ÷ " + numero2 + " = " + (numero1/numero2));	
+}

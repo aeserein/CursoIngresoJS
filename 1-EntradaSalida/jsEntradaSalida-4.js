@@ -4,5 +4,5 @@
 function mostrar() {
 	var dato = prompt("Ingresar dato","Dato");
 	document.getElementById("elNombre").value = dato;
-	alert(document.getElementById("elNombre").value);
+	alert(document.getElementById("elNombre").value + " (preguntar si la alerta es necesaria)");
 }
