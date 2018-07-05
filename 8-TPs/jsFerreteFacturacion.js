@@ -1,17 +1,22 @@
-/*1.	Para el departamento de facturación:
-A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
-B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
-C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
-*/
-function Sumar () 
-{
-	
+var n1,n2,n3;
+
+function aceptarValores(){
+    n1 = parseInt(document.getElementById("PrecioUno").value);
+    n2 = parseInt(document.getElementById("PrecioDos").value);
+    n3 = parseInt(document.getElementById("PrecioTres").value);
 }
-function Promedio () 
-{
-	
+
+function Sumar () {
+    aceptarValores();
+    alert("Precio total: " + (n1 + n2 + n3) );	
 }
-function PrecioFinal () 
-{
-	
+
+function Promedio () {
+    aceptarValores();
+    alert("Promedio total: " + (n1 + n2 + n3)/3 );
+}
+
+function PrecioFinal () {
+    aceptarValores();
+    alert("Precio final +IVA: " + (n1 + n2 + n3)*1.21);	
 }
