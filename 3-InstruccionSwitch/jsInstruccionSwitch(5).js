@@ -1,12 +1,11 @@
-function mostrar()
-{
-//tomo la edad  
-var laHora = document.getElementById('hora').value;
+function mostrar() {
 
-//alert (laHora);
-	
-	
+    var hora = document.getElementById('hora').value;
 
-
-
-}//FIN DE LA FUNCIÓN
+    if (hora <= 0 || hora >24) {
+        alert("Hora no válida.");
+    } else if (hora >= 7 && hora <=11) {
+        alert("Es de mañana.");
+    }
+    
+}
