@@ -1,29 +1,75 @@
-/*Al comenzar el juego generaremos un número 
-RANDOM del 1 al 3 para la selección de la máquina, 
-siendo 1 para “piedra”, el 2 para “papel” y 3 para “tijera”.
-El jugador seleccionará una imagen correspondiente 
-a su opción  y le informaremos si ganó, empató o perdió.
-*/
 var eleccionMaquina;
 
-function comenzar()
-{
-	
+function comenzar() {
+    eleccionMaquina = Math.random()*(4-1)+1;
+    eleccionMaquina = parseInt(eleccionMaquina);
+    switch(eleccionMaquina) {
+        case 1 : {
+            eleccionMaquina = "Piedra";
+            break;
+        }
+        case 2 : {
+            eleccionMaquina = "Papel";
+            break;
+        }
+        case 3 : {
+            eleccionMaquina = "Tijera";
+            break;
+        }
+    }
+    console.info(eleccionMaquina);
+}
 
+function piedra() {
+    switch (eleccionMaquina) {
+        case "Piedra" : {
+            alert("¡Piedra!.\n\nEmpate");
+            break;
+        }
+        case "Papel" : {
+            alert("¡Papel!\n\nPerdiste :D");
+            break;
+        }
+        case "Tijera" : {
+            alert("¡Tijera!\n\nGanaste :(");
+            break;
+        }
+    }
+    comenzar();
+}
 
-}//FIN DE LA FUNCIÓN
-function piedra()
-{
-	
+function papel() {
+    switch (eleccionMaquina) {
+        case "Piedra" : {
+            alert("¡Piedra!.\n\nGanaste :(");
+            break;
+        }
+        case "Papel" : {
+            alert("¡Papel!\n\nEmpate");
+            break;
+        }
+        case "Tijera" : {
+            alert("¡Tijera!\n\nPerdiste :D");
+            break;
+        }
+    }
+    comenzar();
+}
 
-}//FIN DE LA FUNCIÓN
-function papel()
-{
-
-
-}//FIN DE LA FUNCIÓN
-function tijera()
-{
-	
-
-}//FIN DE LA FUNCIÓN
+function tijera() {
+    switch (eleccionMaquina) {
+        case "Piedra" : {
+            alert("¡Piedra!.\n\nPerdiste :D");
+            break;
+        }
+        case "Papel" : {
+            alert("¡Papel!\n\nGanaste :(");
+            break;
+        }
+        case "Tijera" : {
+            alert("¡Tijera!\n\nEmpate");
+            break;
+        }
+    }
+    comenzar();
+}
