@@ -1,28 +1,24 @@
-var miTemporizador ;
+var temporizador ;
 var contador=0;
 var tiempoInicio;
 var tiempoFinal;
 
 
-function inicio()
-{
-	var random = Math.floor(Math.random()*10000 )+2000;
-	//alert(random);
-	alert("function inicio.");
-	miTemporizador = setTimeout(SegundosEnElAire, random);
+function inicio() {
 	
-}//FIN DE LA FUNCIÓN inicio
+	document.getElementById("secreto").style.visibility="hidden";
+	var random = Math.floor(Math.random()*10000 )+2000;
+	temporizador = setTimeout(delay, random);
+	
+}
 
-function SegundosEnElAire() {
-
+function delay() {
 
 	document.getElementById("secreto").style.visibility="visible"; 
  	tiempoInicio=  new Date();
  	tiempoInicio=tiempoInicio.getTime();
- 	//alert(tiempoInicio);
    
-}//FIN DE LA FUNCIÓN SegundosEnElAire
-
+}
 function ContarMilisegundos()
 {
 	tiempoFinal= new Date();
@@ -46,5 +42,5 @@ function ContarMilisegundos()
 			alert("Te quedastes dormido???: "+resultado);
 		}
 
-	
-}//FIN DE LA FUNCIÓN fin
+	inicio();
+}

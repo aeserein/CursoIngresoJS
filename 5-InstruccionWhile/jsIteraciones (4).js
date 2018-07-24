@@ -1,7 +1,15 @@
-function mostrar()
-{
+function mostrar() {
 
-	var numero = prompt("ingrese un número entre 0 y 10.");
+	var nSecreto,numero;
+	nSecreto = Math.random()*10 + 1;
+	nSecreto = parseInt(nSecreto);
+	numero = 0;
 
+	while (numero != nSecreto) {
+		numero = prompt("Ingrese un número entre 1 y 10.");
+		numero = parseInt(numero);
+	}
 
-}//FIN DE LA FUNCIÓN
+	document.getElementById("Numero").value = numero;
+
+}

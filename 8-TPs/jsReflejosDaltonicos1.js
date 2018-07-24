@@ -1,21 +1,67 @@
-/*En la pantalla se mostrarán 6 botones de 
-distintos colores,  al comenzar el juego se 
-mostrara el texto de un color entre los 6 posibles
- para que el jugador sepa que botón tocar .Al tocar 
- el botón correcto se informara cuanto tiempo tardo.
-*/
-var ColorSecreto;
-var tiempoInicio;
-function comenzar()
-{
+var colorSecreto;
+var tiempoInicio, tiempoFinal;
+var temporizador, delay;
 
-	
+function comenzar() {
 
-}//FIN DE LA FUNCIÓN
-function Responder(colorParametro)
-{
-	
-	
+    document.getElementById("colorElegido").value = "";
 
 
-}//FIN DE LA FUNCIÓN
+    colorSecreto = Math.random()*(6)+1;
+    colorSecreto = parseInt(colorSecreto);
+    switch (colorSecreto) {
+        case 1 : {
+            colorSecreto = "Azul";
+            break;
+        }
+        case 2 : {
+            colorSecreto = "Amarillo";
+            break;
+        }
+        case 3 : {
+            colorSecreto = "Marrón";
+            break;
+        }
+        case 4 : {
+            colorSecreto = "Verde";
+            break;
+        }
+        case 5 : {
+            colorSecreto = "Celeste";
+            break;
+        }
+        case 6 : {
+            colorSecreto = "Rojo";
+            break;
+        }
+    }
+
+    delay = Math.random()*(10000-2000)+2000;
+
+    temporizador = setTimeout(mostrar,delay);
+}
+
+function mostrar() {
+
+    document.getElementById("colorElegido").value = colorSecreto;
+    tiempoInicio = new Date();
+    tiempoInicio = tiempoInicio.getTime();
+
+}
+
+function responder(color) {
+    
+    colorSecreto = colorSecreto.toLowerCase(colorSecreto);
+    tiempoFinal = new Date();
+    tiempoFinal = tiempoFinal.getTime();
+    delay = tiempoFinal-tiempoInicio;          // reciclo delay
+
+    if (color == colorSecreto) {
+        alert("Tiempo de reacción: " + delay + " milisegundos");
+    } else {
+        alert("¡Color equivocado! :(");
+    }
+
+    comenzar();
+
+}
