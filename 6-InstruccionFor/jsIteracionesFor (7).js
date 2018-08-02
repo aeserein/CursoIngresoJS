@@ -1,33 +1,25 @@
 function mostrar() {
 
-    var numero;
-    var divisores = [];
+    var numero, lista;
+    var cDivisores = 0;
     var lista = "";
-    dir = 0;
     numero = prompt("Ingrese un número:");
     numero = parseInt(numero);
 
     for (f=1 ; f<=numero ; f++) {
 
         if (numero%f == 0) {
-            divisores[dir] = f;
-            dir++;
+            cDivisores++;
+            f = f.toString();
+            if (f!=numero) {
+                lista += f + ", ";
+            } else {
+                lista += f + ".";
+            }
         }
 
     }
 
-    for (f=0 ; f<dir ; f++) {
-
-        divisores[f] = divisores[f].toString();
-
-        if (f!=dir-1) {
-            lista = lista + divisores[f] + ", ";
-        } else {
-            lista = lista + divisores[f] + ".";
-        }
-
-    }
-
-    alert("Divisores: " + lista);
+    alert(cDivisores + " divisores.\n\nDivisores: " + lista);
 
 }

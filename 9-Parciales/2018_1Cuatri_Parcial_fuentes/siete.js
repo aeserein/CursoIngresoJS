@@ -1,6 +1,43 @@
-function mostrarReal() {
+function mostrar() {
+
+    var notaEj, sexoEj;
+    var aNotas = 0, promNotas;
+    var notaMin = 10, sexoMin;
+    var masc6 = 0;
+    
+    for (f=0 ; f<5 ; f++) {
+
+        notaEj = undefined;
+        sexoEj = undefined;
+        while (notaEj==undefined || isNaN(notaEj) || notaEj<0 || notaEj>10) {
+            notaEj = prompt("Ingrese nota","Nota");
+            notaEj = parseInt(notaEj);
+        }
+        while (sexoEj==undefined || (sexoEj!="m" && sexoEj!="f")) {
+            sexoEj = prompt("Ingrese sexo (M o F)","Sexo");
+            sexoEj = sexoEj.toLowerCase(sexoEj);
+        }
+
+        aNotas += notaEj;
+
+        if (notaEj<notaMin) {
+            notaMin = notaEj;
+            sexoMin = sexoEj;
+        }
+
+        if (notaEj>=6 && sexoEj=="m") {
+            masc6++;
+        }
+
+    }
+
+    promNotas = aNotas / 5;
+
+    alert("Promedio: " + promNotas +"\n\nNota más baja: " + notaMin + " (" + sexoMin.toUpperCase(sexoMin) + ")\n\nCantidad de varones con 6 o más: " + masc6);
 
 }
+
+// Ejercicio en clase
 
 var cMujeres = 0, cHombres = 0;
 var cMayoresEdad = 0, cMenoresEdad = 0;
@@ -12,7 +49,7 @@ var sexoMasViejo, mujerMasVieja;
 var promMasc,promFem,promTotal;
 
 
-function mostrar() {
+function mostrar2() { // cambiar nombre de la función para usar
 
     var nombre, edad, sexo;
     var c = 0;

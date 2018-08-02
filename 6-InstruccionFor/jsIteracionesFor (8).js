@@ -8,6 +8,7 @@ function mostrar() {
 
         if (numero%f == 0){
             b = false;
+            break;
         }
 
     }
