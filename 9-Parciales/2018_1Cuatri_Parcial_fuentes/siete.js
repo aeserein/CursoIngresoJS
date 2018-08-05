@@ -1,39 +1,40 @@
 function mostrar() {
 
-    var notaEj, sexoEj;
+    var nota, sexo;
     var aNotas = 0, promNotas;
     var notaMin = 10, sexoMin;
-    var masc6 = 0;
-    
+    var cVarones6 = 0;
+
     for (f=0 ; f<5 ; f++) {
 
-        notaEj = undefined;
-        sexoEj = undefined;
-        while (notaEj==undefined || isNaN(notaEj) || notaEj<0 || notaEj>10) {
-            notaEj = prompt("Ingrese nota","Nota");
-            notaEj = parseInt(notaEj);
-        }
-        while (sexoEj==undefined || (sexoEj!="m" && sexoEj!="f")) {
-            sexoEj = prompt("Ingrese sexo (M o F)","Sexo");
-            sexoEj = sexoEj.toLowerCase(sexoEj);
-        }
+        nota = undefined;
+        sexo = undefined;
 
-        aNotas += notaEj;
-
-        if (notaEj<notaMin) {
-            notaMin = notaEj;
-            sexoMin = sexoEj;
+        while (nota==undefined || isNaN(nota) || nota<0 || nota>10) {
+            nota = prompt("Ingrese nota",);
+            nota = parseInt(nota);
+        }
+        while (sexo==undefined || (sexo!="M" && sexo!="F") ) {
+            sexo = prompt("Ingrese sexo");
+            sexo = sexo.toUpperCase(sexo);
         }
 
-        if (notaEj>=6 && sexoEj=="m") {
-            masc6++;
+        aNotas += nota;
+
+        if (nota<notaMin) {
+            notaMin = nota;
+            sexoMin = sexo;
         }
 
+        if (nota>=6 && sexo=="M") {
+            cVarones6++;
+        }
+    
     }
 
-    promNotas = aNotas / 5;
+    promNotas = aNotas/5;
 
-    alert("Promedio: " + promNotas +"\n\nNota más baja: " + notaMin + " (" + sexoMin.toUpperCase(sexoMin) + ")\n\nCantidad de varones con 6 o más: " + masc6);
+    alert("Promedio total de notas: " + promNotas + "\n\nNota más baja: " + notaMin + " (" + sexoMin + ")\n\nCantidad de varones con 6 o más: " + cVarones6);
 
 }
 

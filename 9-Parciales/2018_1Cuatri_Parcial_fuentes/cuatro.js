@@ -1,26 +1,31 @@
 function mostrar() {
 
     var n1, n2;
+    var resultado;
 
     while (n1==undefined || isNaN(n1)) {
-        n1 = prompt("Ingrese el primer número","Número");
+        n1 = prompt("Ingrese primer número");
         n1 = parseInt(n1);
-                
     }
+
     while (n2==undefined || isNaN(n2)) {
-        n2 = prompt("Ingrese el segundo número","Número");
+        n2 = prompt("Ingrese segundo número");
         n2 = parseInt(n2);
     }
 
     if (n1==n2) {
-        alert(n1 + "" + n2);
+        resultado = n1 + "" + n2;
+        alert(resultado);
     } else if (n1>n2) {
-        alert(n1-n2);
+        resultado = n1 - n2;
+        alert(resultado);
     } else {
-        if (n1+n2>10) {
-            alert("La suma es " + (n1+n2) +". Es mayor a 10.");
+        resultado = n1 + n2;
+        if (resultado>10) {
+            alert("La suma es " + resultado + " y es mayor que 10")
         } else {
-            alert(n1+n2);
+            alert(resultado);
         }
     }
+
 }

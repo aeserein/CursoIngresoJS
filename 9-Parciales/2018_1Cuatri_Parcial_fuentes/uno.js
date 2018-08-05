@@ -1,19 +1,18 @@
-
 function mostrar() {
 
-    var ancho, largo, perimetro;
+    var n1, n2;
+    var perimetro;
 
-    while (ancho<0 || isNaN(ancho) || ancho==undefined) {
-        ancho = prompt("Ingrese ancho del rectángulo");
-        ancho = parseInt(ancho);
+    while (n1==undefined || isNaN(n1)) {
+        n1 = prompt("Ingrese primer lado");
+        n1 = parseInt(n1);
     }
-    while (largo<0 || isNaN(largo) || largo==undefined) {
-        largo = prompt("Ingrese largo del rectángulo");
-        largo = parseInt(largo);
+    while (n2==undefined || isNaN(n2)) {
+        n2 = prompt("Ingrese segundo lado");
+        n2 = parseInt(n2);
     }
+    perimetro = (n1*2) + (n2*2);
 
-    perimetro = (ancho*2) + (largo*2);
-    
     alert("Perímetro: " + perimetro);
 
 }

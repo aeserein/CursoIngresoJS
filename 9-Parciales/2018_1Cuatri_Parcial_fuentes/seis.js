@@ -1,13 +1,12 @@
 function mostrar() {
 
     var hora;
+
     hora = document.getElementById("laHora").value;
     hora = parseInt(hora);
 
-    if (hora!=undefined && !isNaN(hora) && hora>0 && hora<24) {
-        
-        switch (hora) {
-        case 6 : 
+    switch (hora) {
+        case 6 :
         case 7 :
         case 8 :
         case 9 :
@@ -30,15 +29,23 @@ function mostrar() {
         case 20 :
         case 21 :
         case 22 :
-        case 23 : {
+        case 23 :
+        case 24 : {
             alert("Es de noche, a dormir");
             break;
         }
-        default : {
+        case 0 : //  <-------- (las 24)
+        case 1 :
+        case 2 :
+        case 3 :
+        case 4 :
+        case 5 : {
             alert("Es de noche");
+            break;
+        }
+        default : {
+            alert("Hora no válida");
         }
     }
-        
-    }    
 
 }

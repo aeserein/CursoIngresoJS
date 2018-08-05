@@ -2,7 +2,7 @@ function mostrar() {
 
     var planeta;
 
-    planeta = prompt("Ingrese un planeta","Planeta");
+    planeta = prompt("Ingrese un planeta");
     planeta = planeta.toLowerCase(planeta);
 
     switch (planeta) {
@@ -15,21 +15,18 @@ function mostrar() {
             alert("Acá vivimos");
             break;
         }
-        case "marte" :
+        case "marte" : 
         case "júpiter" :
         case "jupiter" :
+        case "saturno" :
         case "urano" :
         case "neptuno" : {
             alert("Acá hace más frío");
             break;
         }
-        case "pluton" :
-        case "plutón" : {
-            alert(":(");
-            break;
-        }
         default : {
-            alert("No es un planeta");
+            alert("Planeta no válido");
         }
     }
+
 }

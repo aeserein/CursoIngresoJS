@@ -3,25 +3,24 @@ function mostrar() {
 	document.getElementById('suma').value = "La suma acumulada";
 	document.getElementById('promedio').value = "El promedio";
 	
-	var contador = 0;
 	var acumulador = 0;
-	var numero = [];
+	var numero;
+	var respuesta = "si";
+	var cNumeros = 0;
 
-	while (numero[contador] != NaN) {
+	while (respuesta=="si" || respuesta=="sí") {
 
-		numero[contador] = prompt("Ingrese un número.");
+		numero = prompt("Ingrese un número.");
+		numero = parseInt(numero);
 
-		if (numero[contador] == "") {
-			break;
-		} else {
-			numero[contador] = parseInt(numero[contador]);
-			acumulador += numero[contador];
-			contador++;
-		} // con "" funciona. Con numero[contador] == NaN no funciona
-
+		acumulador += numero;
+		
+		respuesta = prompt("¿Desea ingresar más números?");
+		cNumeros++;
+		
 	}
 
 	document.getElementById('suma').value = acumulador;
-	document.getElementById('promedio').value = acumulador/contador;
+	document.getElementById('promedio').value = acumulador/cNumeros;
 
 }

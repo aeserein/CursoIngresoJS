@@ -7,8 +7,7 @@ var difPosNeg;
 function mostrar() {
 
 	var respuesta = "SÍ";
-	var numero = [];
-	var dArray = 0
+	var numero;
 	sPositivos = 0;
 	sNegativos = 0;
 	cPositivos = 0;
@@ -18,10 +17,10 @@ function mostrar() {
 
 	while (respuesta == "SI" || respuesta == "SÍ") {
 		
-		numero[dArray] = prompt("Ingrese un número");
+		numero = prompt("Ingrese un número");
 		
-		posNegCero(numero[dArray]);
-		par(numero[dArray]);
+		posNegCero(numero);
+		par(numero);
 
 		respuesta = prompt("¿Desea ingresar otro número?");
 		respuesta = respuesta.toUpperCase(respuesta);
@@ -37,7 +36,7 @@ function mostrar() {
 	document.writeln("Suma de númeors positivos: " + sPositivos);
 	document.writeln("Suma de números negativos: " + sNegativos);
 
-	Document.writeln // ????????????
+	document.writeln // ????????????
 
 	// ?????????????????????
 
@@ -46,24 +45,21 @@ function mostrar() {
 function posNegCero(n) {	
 
 	if (n == 0) {
-
 		cCeros++;
-
 	} else if (n > 0) {
-
 		sPositivos += n;
 		cPositivos++;
-
 	} else {
-
 		sNegativos -= n;
 		cNegativos++;
-
 	}
+
 }
 
 function par(n) {
-	if (n%2 == 0){
+
+	if (n%2 == 0) {
 		cPares++;
 	}
+	
 }

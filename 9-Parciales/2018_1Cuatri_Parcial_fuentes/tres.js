@@ -1,18 +1,19 @@
 function mostrar() {
+    
+    var precio, descuento, final;
 
-    var precio, descuento, precioFinal;
-
-    while (precio==undefined || precio<0 || isNaN(precio)) {
-        precio = prompt("Ingrese precio","Precio");
+    while (precio==undefined || isNaN(precio) || precio<0) {
+        precio = prompt("Ingrese precio");
         precio = parseInt(precio);
     }
-    while (descuento==undefined || descuento<0 || isNaN(descuento)) {
-        descuento = prompt("Ingrese descuento","Descuento");
+    while (descuento==undefined || isNaN(descuento) || descuento<0) {
+        descuento = prompt("Ingrese descuento");
         descuento = parseInt(descuento);
-    }
+    }    
 
     descuento = (100 - descuento) * 0.01;
-    precioFinal = precio * descuento;
+    final = precio * descuento;
 
-    document.getElementById("elPrecioFinal").value = precioFinal;
+    document.getElementById("elPrecioFinal").value = final;
+
 }

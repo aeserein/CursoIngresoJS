@@ -5,7 +5,6 @@ function comenzar() {
   numeroSecreto = Math.random()*(101-1)+1;
   numeroSecreto = parseInt(numeroSecreto);
   contadorIntentos = 0;
-  verificar();
 }
 
 function verificar() {

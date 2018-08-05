@@ -5,26 +5,21 @@ function mostrar() {
 
 	var cPositivo = 0;
 	var cNegativo = 1;
-	var numeros = [];
-	var dArray = 0;
+	var numeros;
+	var respuesta = "si";
 
-	while (numeros[dArray] != NaN) {
+	while (respuesta=="si") {
 
-		numeros[dArray] = prompt("Ingrese un número.");
+		numeros = prompt("Ingrese un número.");
+		numeros = parseInt(numeros);
 
-		if (numeros[dArray] != "") {
-
-			numeros[dArray] = parseInt(numeros[dArray]);
-
-			if (numeros[dArray] >= 0) {
-				cPositivo += numeros[dArray];
-			} else {
-				cNegativo *= numeros[dArray];
-			}
-
+		if (numeros >= 0) {
+			cPositivo += numeros;
 		} else {
-			break;
+			cNegativo *= numeros;
 		}
+
+		respuesta = prompt("¿Desea ingresar más números?");
 
 	}
 	

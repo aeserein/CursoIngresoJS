@@ -5,12 +5,12 @@ function mostrar() {
 	
 	var contador = 0;
 	var acumulador = 0;
-	var numero = [];
+	var numero;
 
 	while (contador < 5) {
-		numero[contador] = prompt("Ingrese un número.");
-		numero[contador] = parseInt(numero[contador]);
-		acumulador += numero[contador];
+		numero = prompt("Ingrese un número.");
+		numero = parseInt(numero);
+		acumulador += numero;
 		contador++;
 	}
 
