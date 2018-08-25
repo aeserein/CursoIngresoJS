@@ -1,17 +1,20 @@
-
 function mostrar() {
-    
-    var lado1;
-    var lado2;
-    
-    lado1 = prompt("Ingrese base del triángulo","");
-    lado2 = prompt("Ingrese altura del triángulo","");
-    lado1 = parseInt(lado1);
-    lado2 = parseInt(lado2);
 
-    var superficie = (lado1 * lado2) / 2;
-    var perimetro = (lado1*3); // lado + lado + lado
+    var base, altura;
+    var perimetro, superficie;
 
-    alert("Superficie: " + superficie + "\nPerímetro: " + perimetro);
+    while (base==undefined || isNaN(base) || base<0) {
+        base = prompt("Ingrese base");
+        base = parseInt(base);
+    }
+    while (altura==undefined || isNaN(altura) || altura<0) {
+        altura = prompt("Ingrese altura");
+        altura = parseInt(altura);
+    }
+
+    perimetro = (base*3);
+    superficie = (base * altura) /2;
+
+    alert("El perímetro es " + perimetro + "\n\nLa superficie es " + superficie);    
     
 }
